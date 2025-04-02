@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include "item.h"
 #include "list.h"
+#include "utils.h"
 
 struct list{
 	int size;
@@ -192,7 +193,6 @@ List cloneList(List l)
 
 void sortList(List l){
 	struct node *p, *min, *temp;
-	Item item_temp;
 	for(p=l->head; p!=NULL; p=p->next){
 		min=p;
 		temp=p->next;
@@ -202,8 +202,6 @@ void sortList(List l){
 			}
 			temp=temp->next;
 		}
-		item_temp=p->value;
-		p->value=min->value;
-		min->value=item_temp;
+		swap(&p->value, &min->value);
 	}
 }
