@@ -1,13 +1,11 @@
 #include "song.h"
 #include <stdlib.h>
 
-#define M 20
-
 struct song{
   char *title;
   char *artist;
   int duration;
-}
+};
 
 Song initSong(char* title, char* artist, int duration){
   Song s=(Song)malloc(sizeof(struct song));
@@ -22,13 +20,13 @@ Song initSong(char* title, char* artist, int duration){
 }
 
 char* title(Song s){
-  printf("%s", s->title);
+  return s->title;
 }
 
 char* artist(Song s){
-  printf("%s", s->artist);
+  return s->artist;
 }
 
 int duration(Song s){
-  printf("%d", s->duration);
+  return s->duration;
 }

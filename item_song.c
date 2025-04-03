@@ -14,22 +14,28 @@ Item inputItem(){
     return NULL;
   }
 
-  printf("\nInserisci il titolo: ");
+  printf("Inserisci il titolo: ");
   fgets(title, M, stdin);
   title[strcspn(title, "\n")]='\0';
-  printf("\nInserisci l'artista: ");
+  printf("Inserisci l'artista: ");
   fgets(artist, M, stdin);
-  artit[strcspn(title, "\n")]='\0';
-  printf("\nInserisci la durata (secondi): ");
+  artist[strcspn(artist, "\n")]='\0';
+  printf("Inserisci la durata (secondi): ");
   scanf("%d", &duration);
+  while (getchar()!='\n');
 
   return (Item)initSong(title, artist, duration);
 }
 
-void outputItem(Item song){
-  printf("%s\n%s\n%d", song->title, song->artist, song->duration);
+void outputItem(Item s){
+  //Song song;
+  //song=(Song)s;
+  printf("%s\n%s\n%d\n\n", title(s), artist(s), duration(s));
 }
 
-int cmpItem(Item song1, Item song2){
-  return strcmp(song1->title, song2->title);
+int cmpItem(Item s1, Item s2){
+  //Song song1, song2;
+  //song1=(Song)s1;
+  //song2=(Song)s2;
+  return strcmp(title(s1), title(s2));
 }

@@ -1,15 +1,16 @@
 #include "list.h"
 #include "playlist.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 struct playlist{
   char *name;
   List songs;
-}
+};
 
 Playlist createPlaylist(char *name){
   Playlist pl;
   pl=(Playlist)malloc(sizeof(struct playlist));
-  pl->name=(char *)malloc(20*sizeof(char));
   pl->name=name;
   pl->songs=newList();
   return pl;
@@ -20,7 +21,9 @@ void addSong(Playlist pl, Song s){
 }
 
 void removeSong(Playlist pl, char *title){
-  searchListItem()
+  Song s;
+  s=initSong(title, "", 0);
+  removeListItem(pl->songs, title);
 }
 
 void sortPlaylist(Playlist pl){
@@ -28,5 +31,6 @@ void sortPlaylist(Playlist pl){
 }
 
 void printPlaylist(Playlist pl){
-
+  printf("Stampa della playlist %s\n", pl->name);
+  printList(pl->songs);
 }
