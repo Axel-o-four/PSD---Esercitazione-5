@@ -24,11 +24,13 @@ int main(){
     if(i>=2){
       printf("Si vuole eliminare qualche brano? (1 si, 0 no)");
       scanf("%d", &del);
-      if(del){
+      if(del!=0){
         printf("Inserire il titolo della canzone da eliminare: ");
-        fgets(eliminazione, M, stdin);
+        scanf("%s", eliminazione);
+        while (getchar()!='\n');
         eliminazione[strcspn(eliminazione, "\n")]='\0';
         removeSong(rock, eliminazione);
+        i--;
         printPlaylist(rock);
       }
     }

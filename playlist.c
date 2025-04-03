@@ -23,7 +23,7 @@ void addSong(Playlist pl, Song s){
 void removeSong(Playlist pl, char *title){
   Song s;
   s=initSong(title, "", 0);
-  removeListItem(pl->songs, title);
+  removeListItem(pl->songs, s);
 }
 
 void sortPlaylist(Playlist pl){
