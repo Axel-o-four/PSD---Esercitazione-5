@@ -7,13 +7,11 @@
 
 int main(){
   char *nome, *eliminazione;
-  int n, del;
+  int n=5, del;
   nome=(char *)malloc((strlen("Rock")+1)*sizeof(char));
   eliminazione=(char *)malloc(M*sizeof(char));
   strcpy(nome, "Rock");
-  printf("Realizzazione della playlist %s. Quanti pezzi si vuole inserire: ", nome);
-  scanf("%d", &n);
-  while (getchar()!='\n');
+  printf("Realizzazione della playlist %s.\n", nome);
   Playlist rock;
   Song s;
   rock=createPlaylist(nome);
@@ -24,6 +22,7 @@ int main(){
     if(i>=2){
       printf("Si vuole eliminare qualche brano? (1 si, 0 no)");
       scanf("%d", &del);
+      while (getchar()!='\n');
       if(del!=0){
         printf("Inserire il titolo della canzone da eliminare: ");
         scanf("%s", eliminazione);
