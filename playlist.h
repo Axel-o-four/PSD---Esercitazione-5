@@ -2,8 +2,8 @@
 
 typedef struct playlist *Playlist;
 
-Playlist createPlaylist(char* name);
-void addSong(Playlist, Song);
-void removeSong(Playlist, char*);
-void sortPlaylist(Playlist);
-void printPlaylist(Playlist);
+Playlist createPlaylist(char *name);
+void addSong(Playlist pl, Song s);
+void removeSong(Playlist pl, char *title);
+void sortPlaylist(Playlist pl);
+void printPlaylist(Playlist pl);

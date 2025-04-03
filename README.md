@@ -5,7 +5,7 @@ Estendere l’ADT Lista con l’aggiunta di un nuovo operatore chiamato sortList
 - Progettare e implementare sortList. L’operatore deve ordinare una lista in maniera crescente
 
 Suggerimenti:
-- Pper realizzare l’ordinamento si utilizzi il selection sort
+- Per realizzare l’ordinamento si utilizzi il selection sort
 - Realizzare gli scambi semplicemente scambiando gli item dei nodi
 
 ### ESERCIZIO 2
